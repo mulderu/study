@@ -86,4 +86,14 @@ print next(E)
 print next(E)
 print next(E)
 
+dict1 = { 'hi mulder': 'okay scully' }
+
+print "dict1['hi mulder']", dict1['hi mulder']
+
+dict1['second member'] = 'jain'
+print "dict1['second member']", dict1['second member']
+
+
+
+
 
