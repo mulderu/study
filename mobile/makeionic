@@ -1,0 +1,7 @@
+DATE=`date +%Y%m%d`
+TIME=`date +%H%M%S`
+
+# blank, tabs, sidemenu
+echo "make ... ionic start app$DATE_$TIME sidemenu -a MyApp$DATE_$TIME -i com.turbinesoft.myapp$DATE_$TIME"
+ionic start app$DATE_$TIME sidemenu -a MyApp$DATE_$TIME -i com.turbinesoft.myapp$DATE_$TIME
+cd app$DATE_$TIME && ionic platform add ios && ionic build ios && ionic emulate ios
