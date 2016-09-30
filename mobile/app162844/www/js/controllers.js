@@ -2,11 +2,15 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($rootScope, $scope, $ionicModal, $timeout 
+    , $state
   ) {
     // $scope.sessions = Session.query();
     // $scope.session = Session.get({sessionId: $stateParams.sessionId});
  
  $rootScope.xname = "mulder";
+ $rootScope.goOtherStat = function(stateName) {
+   $state.go(stateName);
+ }
 
   // $scope.leftToggleMenuEnable = false;
 
