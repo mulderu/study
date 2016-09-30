@@ -1,0 +1,188 @@
+<ion-view view-title="ui01">
+  <ion-content>
+     
+
+   <div>
+   <p>The name is {{ lastName | uppercase }} {{ lastName | lowercase }}, {{ lastName }} </p>
+
+   <p> {{ hdata }}
+   <p> {{ demoUpVal }}
+
+     
+     
+
+   </div>
+   <!------------------------------->
+
+
+   <div class="row">
+      <div class="col"><p><button ng-click="getHttpVal()"> getHttpVal </button>
+       <br>{{ jsonName1 }}
+
+       <div> 
+        <h1 ng-mousemove="myFunc2($event)">Mouse Over Me!</h1> 
+        <p>Coordinates: {{ex + ', ' + ey}}</p>
+       </div>
+     </p></div>
+      <div class="col"><p><button ng-click="getHttpVal2()"> getHttpVal2 </button>
+       <br>{{ jsonName2 }}
+
+
+            <div> 
+              <h1 ng-mousemove="count = count + 1">Mouse over me!</h1> 
+              <h2>{{ count }}</h2>
+            </div>
+
+     </p></div>
+       
+      <div class="col">
+        <div> 
+            <p>
+            <button ng-disabled="mySwitch">Click Me!</button>
+            </p>
+
+            <p>
+            <input type="checkbox" ng-model="mySwitch">Button
+            </p>
+
+            <p>
+            {{ mySwitch }}
+            </p>
+
+            <h1 ng-hide="mySwitch">mySwitch hide</h1>
+            <h1 ng-show="mySwitch">mySwitch show</h1>
+ 
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <!------------------------------->
+   <hr>
+   <div>
+
+     <div style="border: 1px solid red;">
+      
+          <form novalidate>
+            First Name:<br>
+            <input type="text" ng-model="user.firstName"><br>
+            Last Name:<br>
+            <input type="text" ng-model="user.lastName">
+            <br><br>
+            <button ng-click="reset()">RESET</button>
+          </form>
+          <p>form = {{user}}</p>
+          <p>master = {{master}}</p>
+          
+      </div>
+
+      <div>
+        <form name="myForm">
+          <input name="myInput" ng-model="myInput" type="email">
+          </form>
+
+          <p>The input's valid state is:</p>
+          <h1>{{myForm.myInput.$valid}}</h1>
+
+        </div>
+     
+
+
+     <select ng-model="selectedCar" ng-options="x.model for x in cars">
+     </select>
+
+     <p>
+       <h1>You selected: {{selectedCar.model}}</h1>
+       <p>Its color is: {{selectedCar.color}}</p>
+      </p>
+
+   
+   </div>
+
+   <hr>
+   <div>
+
+     <table border="1" width="100%">
+      <tr>
+        <th>no</th>
+        <th ng-click="orderByMe('name')">Name</th>
+        <th ng-click="orderByMe('country')">Country</th>
+      </tr>
+      <tr ng-repeat="x in names | orderBy:myOrderBy">
+        <td>{{$index+1}}</td>
+        <td>{{x.name}}</td>
+        <td>{{x.country}}</td>
+      </tr>
+    </table>
+
+   
+   </div>
+   <!------------------------------->
+   <hr>
+   <div>
+     <ul>
+        <li ng-repeat="x in names2">
+            {{x | myFormat}}
+        </li>
+    </ul>
+   </div>
+   <!------------------------------->
+   <hr>
+   <div>
+   
+   </div>
+  
+   <!------------------------------->
+   <hr>
+   <div>
+   
+   </div>
+   <!------------------------------->
+   <hr>
+   <div>
+   
+   </div>
+   <!------------------------------->
+   <hr>
+   <div>
+   
+   </div>
+   <!------------------------------->
+   <div>
+   
+   </div>
+   <!------------------------------->
+   <div>
+   
+   </div>
+   <!------------------------------->
+   <div>
+   
+   </div>
+   <!------------------------------->
+   <div>
+   
+   </div>
+   <!------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </ion-content>
+</ion-view>

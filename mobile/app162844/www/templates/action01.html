@@ -1,0 +1,153 @@
+<ion-view view-title="Action01">
+  <ion-content>
+
+
+
+    <button ng-click="show()">ionicActionSheet show</button>
+ 
+
+ 
+      <ion-checkbox ng-model="isChecked">Checkbox Label</ion-checkbox>
+   
+      <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'C'">Choose C</ion-radio>
+  
+ 
+      <ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">Airplane Mode</ion-toggle>
+ 
+        
+<div>
+    <button on-swipe-left="onSwipeLeft()" class="button">Test</button>
+</div>
+<div>
+    <button ng-click="openModal()" class="button">ngModal Open</button>
+</div>
+
+<div>
+  <P> root
+  <p>  Name: <input ng-model="xname">
+  <p>  Your Name : {{xname}}
+</div>
+
+
+<div ng-controller="subContrl">
+  <P> sub
+  <p>  Name: <input ng-model="xname">
+  <p>  Your Name : {{xname}}
+</div>
+
+
+
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+  <ul>
+    <li ng-repeat="x in names">
+      {{ x }}
+    </li>
+  </ul>
+</div>
+
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+
+<ul>
+  <li ng-repeat="x	in names">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+
+</div>
+
+
+
+<div>
+  <div>------- {{ 1 + 2 }} -------</div>
+  <div exmulder001></div>  
+  <div>-------aaaaa-------</div>
+</div>
+
+
+
+<p>
+  <button ng-click="openPopover($event)">Open Popover</button>
+</p>
+
+<p>
+  <button class="button button-dark" ng-click="showPopup()">
+      show
+    </button>
+    <button class="button button-primary" ng-click="showConfirm()">
+      Confirm
+    </button>
+    <button class="button button-positive" ng-click="showAlert()">
+      Alert
+    </button>
+    
+    </p>
+
+<p>
+  <button class="button button-dark" ng-click="toggleLeft()">
+      toggle Left
+    </button> 
+    
+    </p>
+
+
+<div style="width: 50%; margin: auto;">
+
+ 
+<ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide>
+    <div class="box blue"><h1>BLUE</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box yellow"><h1>YELLOW</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box pink"><h1>PINK</h1></div>
+  </ion-slide>
+</ion-slide-box>
+  
+
+  </div>
+
+
+
+<div>
+  <ion-spinner icon="spiral"></ion-spinner>
+  </div>
+
+
+
+  </ion-content>
+
+</ion-view>
+
+<!---------------------------------------->
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view>
+    <ion-header-bar>
+      <h1 class="title">My Popover Title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-popover-view>
+</script>
+<script id="popup-template.html" type="text/ng-template">
+      <input ng-model="data.wifi" type="text" placeholder="Password">
+    </script>

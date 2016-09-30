@@ -12,7 +12,7 @@
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
 
-  <ion-side-menu side="left">
+  <ion-side-menu side="left" is-enabled="leftToggleMenuEnable">
     <ion-header-bar class="bar-stable">
       <h1 class="title">Left</h1>
     </ion-header-bar>
@@ -32,6 +32,13 @@
         </ion-item>
         <ion-item menu-close href="#/app/extra01">
           extra01
+        </ion-item>
+ 
+        <ion-item menu-close href="#/app/action01">
+          action01
+        </ion-item>
+        <ion-item menu-close href="#/app/ui01">
+          ui01
         </ion-item>
       </ion-list>
     </ion-content>

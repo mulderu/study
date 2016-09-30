@@ -71,12 +71,31 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+
   .state('app.extra01', {
       url: '/extra01',
       views: {
         'menuContent': {
           templateUrl: 'templates/extra01.html',
           controller: 'Extra01Ctrl'
+        }
+      }
+    })
+  .state('app.action01', {
+      url: '/action01',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/action01.html',
+          controller: 'Action01Ctrl'
+        }
+      }
+    })
+  .state('app.ui01', {
+      url: '/ui01',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/ui01.html',
+          controller: 'Ui01Ctrl'
         }
       }
     })
