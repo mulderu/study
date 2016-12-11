@@ -1,7 +1,13 @@
 DATE=`date +%Y%m%d`
 TIME=`date +%H%M%S`
 
+APP_ID=`date +%Y%m%d_%H%M%S`
+
+if [ "$#" -eq 1 ]; then
+    APP_ID="$1"
+fi
+
 # blank, tabs, sidemenu
-echo "make ... ionic start app$DATE_$TIME sidemenu -a MyApp$DATE_$TIME -i com.turbinesoft.myapp$DATE_$TIME"
-ionic start app$DATE_$TIME sidemenu -a MyApp$DATE_$TIME -i com.turbinesoft.myapp$DATE_$TIME
-cd app$DATE_$TIME && ionic platform add ios && ionic build ios && ionic emulate ios
+echo "make ... ionic start app$APP_ID sidemenu -a MyApp$APP_ID -i com.turbinesoft.myapp$APP_ID"
+#ionic start app$APP_ID sidemenu -a MyApp$APP_ID -i com.turbinesoft.myapp$APP_ID
+#cd app$DATE_$TIME && ionic platform add ios && ionic build ios && ionic emulate ios

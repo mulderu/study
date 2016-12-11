@@ -1,0 +1,27 @@
+{
+  "name": "asyncs",
+  "version": "1.0.0",
+  "description": "mulder study",
+  "main": "app.js",
+  "scripts": {
+    "app": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mulderu/study.git"
+  },
+  "keywords": [
+    "nodejs",
+    "async"
+  ],
+  "author": "mulder yu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mulderu/study/issues"
+  },
+  "homepage": "https://github.com/mulderu/study#readme",
+  "dependencies": {
+    "async": "^2.1.4"
+  }
+}
