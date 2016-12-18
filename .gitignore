@@ -7,3 +7,5 @@ plugins
 *.swo
 *.log
 *.DS_Store
+*.zip
+mobile
