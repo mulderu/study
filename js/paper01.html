@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+      <title>paperjs</title>
+      <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+      <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="http://paperjs.org/assets/js/paper.js"></script>
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+	// Create a Paper.js Path to draw a line into it:
+	var path = new Path();
+	// Give the stroke a color
+	path.strokeColor = 'black';
+	var start = new Point(100, 100);
+	// Move to start and draw a line from there
+	path.moveTo(start);
+	// Note the plus operator on Point objects.
+	// PaperScript does that for us, and much more!
+	path.lineTo(start + [ 100, -50 ]);
+	path.lineTo( [250, 250 ]);
+
+
+
+// Create a circle shaped path with its center at the center
+// of the view and a radius of 30:
+var path = new Path.Circle({
+	center: view.center,
+	radius: 30,
+	strokeColor: 'black'
+});
+
+function onResize(event) {
+	// Whenever the window is resized, recenter the path:
+	path.position = view.center;
+}
+
+
+</script>
+
+        
+	  
+  </head>
+  <body>
+
+	<canvas id="myCanvas" resize></canvas>
+
+
+  </body>
+  </html>
