@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    .container > * {
+      position: absolute;
+      top: 0px;
+    }
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  
+  <h1>Sample SVG Polygon Image</h1>
+  <div class="container">    
+      <div> 
+        <h1>hi Mulder</h1>
+        <h1>hi Mulder</h1>
+        <h1>hi Mulder</h1>
+        <h1>hi Mulder</h1>
+      </div>
+      <svg width="800" height="800"> 
+         <g>
+            <text x="0" y="15" fill="black" >Polygon #2: With opacity </text>
+         
+            <polygon points="150,75 258,137.5 258,262.5 150,325 42,262.6 42,137.5"
+            style="fill:rgb(121,0,121);stroke-width:3;
+            stroke:rgb(0,0,0);stroke-opacity:0.5;opacity:0.7"></polygon>
+         </g>
+        
+        <g>
+            <text x="30" y="12" >Text: </text>
+            <text x="30" y="30" fill="rgb(121,0,121)">WWW.TutorialsPoint.COM</text>
+         </g> 
+        
+        <g>
+            <text x="30" y="12" >Multiline Text: </text>
+            <text x="30" y="30" fill="rgb(121,0,121)">WWW.TutorialsPoint.COM
+            <tspan x="30" y="50" font-weight="bold">Simply Easy learning.</tspan>
+            <tspan x="30" y="70">We teach just for free.</tspan>
+            </text>
+         </g>
+        
+         
+      <svg width="800" height="800">
+         <text x="30" y="10" >Using stroke-width: </text>
+         <path stroke-width="2" stroke="black" d="M 50 50 L 300 50" />
+         <path stroke-width="4" stroke="black" d="M 50 70 L 300 70" />
+         <path stroke-width="6" stroke="black" d="M 50 90 L 300 90" />
+      </svg>
+        
+        <g>
+            <text x="30" y="30" >Using stroke-dasharray: </text>
+            
+            <path stroke-dasharray="5,5" stroke-width="6" 
+            stroke="black" d="M 50 50 L 300 50" />
+            
+            <path stroke-dasharray="10,10" stroke-width="6" 
+            stroke="black" d="M 50 70 L 300 70" />
+            
+            <path stroke-dasharray="20,10,5,5,5,10" stroke-width="6" 
+            stroke="black" d="M 50 90 L 300 90" />
+         </g>
+        
+        <g>
+          
+          <path d="M200 200"/>
+
+          <!-- Points -->
+          <circle cx="100" cy="100" r="20" fill="red"/>
+
+        </g>
+        
+        <g>
+
+          <path d="M10 10 H 90 V 90 H 10 L 10 10"/>
+
+          <!-- Points -->
+          <circle cx="10" cy="10" r="2" fill="red"/>
+          <circle cx="90" cy="90" r="2" fill="red"/>
+          <circle cx="90" cy="10" r="2" fill="red"/>
+          <circle cx="10" cy="90" r="2" fill="red"/>
+        </g>
+      
+        
+        
+        
+      </svg>
+  </div>
+  <div style="margin-top: 300px;">
+    <h1>good</h1>
+    <svg width="800" height="800"> 
+       <g>
+         <path d="M10 10 h 80 v 80 H 40 Z" fill="transparent" stroke="black"/>
+         <path d="M10 10 C 20 20, 40 20, 50 10" stroke="black" fill="transparent"/>
+      </g>
+    </svg>
+    
+
+  </div>
+
+</body>
+</html>
