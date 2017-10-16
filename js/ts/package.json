@@ -1,0 +1,20 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "typescript tester",
+  "main": "main.js",
+  "scripts": {
+    //"test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node dist/main.js"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "mulder",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.4",
+    "typescript": "^2.1.5"
+  }
+}

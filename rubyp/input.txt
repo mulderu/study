@@ -1,0 +1,5 @@
+ABCDEFs a simple text file for testing purpose.
+aaaa
+bbbb
+ccccc
+dddd
