@@ -20,6 +20,8 @@
   hi scully
   hi scully
   </p>
+  <p id="good">
+  </p>
   
   
 </body>
@@ -29,7 +31,7 @@
   (function() {
     function aaa() {
       d3.selectAll("p").style("color", function(d, i) {
-        return i % 2 ? "#fff" : "#eee";
+        return i % 2 ? "#000" : "#330";
       });
     }
     function bbb() {
@@ -42,6 +44,17 @@
         .data([23, 42])
           .style("font-size", function(d) { return d + "px"; });
     }
+    function eee() {
+      d3.select("body")
+        .selectAll("p#good")
+          .data(["helo", "hi", "mulder", "what", "do", "you", "do"])
+          .enter()
+          .append("p")
+            .attr('class', 'foo2')
+            .text(function(d) {
+              return d + ", world";
+            });
+    }
 
     function ddd() {
       var el = d3.select('p').append('p').attr('class', 'foo').text('Hello world !');
@@ -52,7 +65,7 @@
           .style("background-color", "yellow");
 
       d3.select("body")
-        .selectAll("p")
+        .selectAll("p#good")
           .data(["helo", "hi", "mulder", "what", "do", "you", "do"])
           .enter()
           .append("p")
@@ -67,8 +80,11 @@
           .attr("r", function(d) { return Math.sqrt(d * scale); });
     }
 
-    ccc();
-    ddd();
+    aaa();
+    setTimeout(bbb, 1000);
+    //ccc();
+    //ddd();
+    eee();
 
 
   })();

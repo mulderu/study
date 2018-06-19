@@ -1,0 +1,14 @@
+{
+  "name": "pngjs",
+  "version": "1.0.0",
+  "description": "drawing test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mulderu@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "pngjs-draw": "0.0.6"
+  }
+}

@@ -7,5 +7,11 @@ plugins
 *.swo
 *.log
 *.DS_Store
-*.zip
 mobile
+**/node_modules
+*.zip
+*.tgz
+*.tar
+**/*.tgz
+**/*.tar
+**/zip
