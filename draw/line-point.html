@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>2point algebra</title>
+  <script src="https://code.jquery.com/jquery.min.js"></script> 
+  <style>
+    #pan { position: relative; width: 1000px; height: 800px; }
+    .jum { position: absolute; background-color:blue; width: 5px; height: 5px; }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="button" value="test1"  >
+    <input type="button" value="test2"  >
+    <input type="button" value="test3"  >
+  </div>
+  
+  <div id="pan">
+  </div>
+  <div id="log">
+  </div>
+  
+  
+  <script>
+    
+    
+    ////////////////////////////////////////
+    
+    var mUtil = {
+      
+      line : {
+        getLength: function(p1, p2) {
+          let dx = p1.x-p2.x, dy = p1.y-p2.y;
+
+          return Math.sqrt(dx*dx + dy*dy);
+        },
+        getAngleR: function(p1, p2) {
+          return Math.atan2(p2.y - p1.y, p2.x - p1.x);
+        },
+        rad2deg: function(r) {
+          return r * 180 / Math.PI;
+        },
+        
+        rad2Deg: function(p1, p2) {
+          return this.getAngleR * 180 / Math.PI;
+        },
+
+        // p : target, mp: midpoint, a : angle-degree
+        rotate: function (p, m, a) {
+          var cos = Math.cos,
+              sin = Math.sin,
+              a = a * Math.PI / 180, // Convert to radians because that is what
+                                     // JavaScript likes
+
+            // Subtract midpoints, so that midpoint is translated to origin
+            // and add it in the end again
+            xr = (p.x - m.x) * cos(a) - (p.y - m.y) * sin(a) + m.x,
+            yr = (p.x - m.x) * sin(a) + (p.y - m.y) * cos(a) + m.y;
+
+            return {x:xr, y:yr};
+        },
+    
+        
+        getExtendedP3P4: function(p1, p2, extendedLength) {
+          var a1 = this.getAngleR(p1, p2);
+          var r1 = this.getLength(p1, p2); 
+          var r2 = extendedLength;      
+          var dx = Math.cos(a1) * (r1+r2);
+          var dy = Math.sin(a1) * (r1+r2);      
+      
+          return {p3: {x: p2.x-dx, y: p2.y-dy}
+                  , p4: {x: p1.x+dx, y: p1.y+dy}};
+        }
+      }      
+    }
+    
+    var logs = [];
+    function addLog(s, b, c) {
+      //logs.unshift(arguments.join(", "));
+      if(typeof b !== 'undefined') s += ', ' + b;
+      if(typeof c !== 'undefined') s += ', ' + c;      
+      logs.unshift(s);
+      $('#log').html ('<div>'+logs.join("</div><div>") + '</div>');
+      
+    } 
+    function addbox(p,c,t) {
+      let $p = $('<div class="jum"></div>');
+      $p.css({left:p.x+'px', top:p.y+'px'});
+      if(typeof c === 'string') $p.css({'background-color': c});            
+      if(typeof t === 'string') $p.append('<div>'+t+'</div>');
+      $p.appendTo($('#pan'));
+      
+      
+    }
+    $(document).ready(function() {
+      var p1={x:300, y:300}, p2={x:400, y:140};
+      
+      addbox(p1, 'blue','p1');
+      addbox(p2, 'blue','p2');
+       
+      var p3p4 = mUtil.line.getExtendedP3P4(p1, p2, 50);
+      addbox(p3p4.p3, 'red','p3');
+      addbox(p3p4.p4, 'red','p4');
+      
+      var btnProc = {
+        exectest1: function(sender) {
+          var pn = mUtil.line.rotate(p3p4.p3, p1, -90);          
+          addbox(pn, 'green','pn');          
+        },
+        exectest2: function(sender) {
+          var pn = mUtil.line.rotate(p3p4.p3, p2, 90);          
+          addbox(pn, 'green','pn');          
+        }
+      };
+      
+      $('input[type="button"]').on('click', function() {
+        var val = $(this).val();
+        btnProc['exec'+val](this);        
+      }); 
+       
+      
+      
+    });
+  </script>
+
+</body>
+</html>
+  
