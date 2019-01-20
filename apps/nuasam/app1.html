@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  <link href="assets/app1.css" rel="stylesheet" type="text/css" />
+  <script src="assets/app1.js"></script>
+
+</head>
+<body onhashchange="onHashChanged()">
+  
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="#nav_play" data-toggle="tab">Play</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nav_config" data-toggle="tab">Config</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+ 
+    <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="nav_play">
+      <!-- Begin page content -->
+      <div class="container"> 
+        <div class="page-header">
+          <h1>   <input id="op1" type="number" class="op form-inline-control" style="margin-left: 30px;">
+            <button id="refresh-btn" class="btn btn-info"> 다음문제  </button> 
+          </h1>
+          <h1> x <input id="op2" type="number" class="op form-inline-control">  
+            <button id="run-btn" class="btn btn-primary"> 정답   </button> 
+          </h1>
+        </div>
+        <div id="run-background">
+
+
+          <canvas id="canvas-answer-sheet">
+          </canvas>
+
+          <div id="answer-sheet">
+            <div id="answer-step" class="text-right" >
+
+            </div>     
+            <div id="answer-final" class="text-right"  >
+
+            </div>
+          </div>
+
+        </div> <!-- /#run-background -->
+      </div> <!-- /.container -->
+    </div> <!-- /.tab -->
+   
+  
+  
+    <div class="tab-pane fade " id="nav_config">
+      <!-- Begin page content -->
+      <div class="container"> 
+
+          <div class="card">
+              <h5 class="card-header">설 정 </h5>
+              <div class="card-body">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th><h3>정답 표시 시간  </h3></th>
+                      <td><h3>   
+                          <input id="clearTime" type="number" class="cfg form-inline-control">
+                        </h3></td>
+                        <td><h3>(초)</h3></td>
+                    </tr>
+                    <tr>
+                      <th><h3>계산 자릿수 </h1></th>
+                      <td><h3>   
+                          <input id="oplen" type="number" class="cfg form-inline-control">  
+                        </h3></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="text-center ml-10">
+                  <button id="cfg-save-btn" class="btn btn-primary"> 저장 </button>
+                </div> 
+              
+              </div>
+            </div>
+        
+         
+      </div> <!-- /.container -->
+    </div> <!-- /.tab -->
+
+    </div> <!-- /.tab-content -->
+   
+
+  
+  
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"> Mulders presents</p>
+      </div>
+    </footer>
+  
+  </body>
+</html>

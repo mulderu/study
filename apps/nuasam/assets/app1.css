@@ -1,0 +1,81 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+/* --- for mulder -- */
+
+input { text-align: right; }
+
+.myview { display: none; margin-top: 30px;}
+.myview.active { display: block; }
+
+input.op { text-align: right;  width: 240px;}
+
+
+#run-background { position: relative; }
+
+#canvas-answer-sheet { position: absolute; 
+  left: 30px; width: 260px; height: 300px; 
+  z-index:0; 
+  border: 1px solid black;
+}
+
+#answer-sheet { position: absolute; z-index: 999;
+ width: 230px; left: 65px;
+  border: 0px solid red;
+}
+#answer-step { margin:0; padding: 0; color: #55F; }
+#answer-final { background-color: rgba(200,200,50,0.4); 
+ color: #000; }
+
+#answer-sheet .xstep { font-size: 36px; display: block; } 
+
+#answer-sheet > div { width: 200px; }
+
+.xstep-1 { margin-right: 20px; }
+.xstep-2 { margin-right: 40px; }
+.xstep-3 { margin-right: 60px; }
+.xstep-4 { margin-right: 80px; }
+.xstep-5 { margin-right: 100px; }
+.xstep-6 { margin-right: 120px; }
+.xstep-7 { margin-right: 140px; }
+.xstep-8 { margin-right: 160px; }
+.xstep-9 { margin-right: 180px; }
+
+input.cfg { width: 100px; }
