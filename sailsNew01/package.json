@@ -20,7 +20,7 @@
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
-    "marked": "^0.3.12",
+    "marked": "^4.0.10",
     "moment": "^2.20.1",
     "rc": "1.0.1",
     "rss": "^1.2.2",
