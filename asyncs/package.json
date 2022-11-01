@@ -23,6 +23,6 @@
   "homepage": "https://github.com/mulderu/study#readme",
   "dependencies": {
     "async": "^2.1.4",
-    "gulp": "^3.9.1"
+    "gulp": "^4.0.2"
   }
 }
